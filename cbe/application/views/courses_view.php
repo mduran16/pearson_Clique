@@ -1,5 +1,5 @@
 <?php
-
+/*
 ob_start();
 
 if (!isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
@@ -7,8 +7,13 @@ if (!isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
 }
 
 else{
-
-	if($this->session->userdata("logged_in") == true)
+*/
+	if($this->session->userdata("logged_in") == true && isset($roster))
+	{
+		echo json_encode($roster);
+		die();
+	}
+	elseif($this->session->userdata("logged_in") == true)
 	{
 		$userdata = array("courses" => $this->session->userdata("coursedata"),
 			);
@@ -16,7 +21,7 @@ else{
 	}
 	else
 		echo json_encode(array("logged_in" => false));
-}		
+//}		
 
 
 die();

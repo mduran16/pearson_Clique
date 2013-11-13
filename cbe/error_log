@@ -1,0 +1,91 @@
+[05-Nov-2013 15:12:27 America/New_York] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 29
+[05-Nov-2013 15:12:28 America/New_York] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 29
+[05-Nov-2013 15:12:40 America/New_York] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 29
+[05-Nov-2013 15:14:30 America/New_York] PHP Fatal error:  Can't use method return value in write context in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 26
+[05-Nov-2013 15:14:33 America/New_York] PHP Fatal error:  Can't use method return value in write context in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 26
+[05-Nov-2013 15:14:56 America/New_York] PHP Fatal error:  Can't use method return value in write context in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 26
+[05-Nov-2013 22:33:12 America/New_York] PHP Parse error:  syntax error, unexpected T_ELSE, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 70
+[05-Nov-2013 22:33:14 America/New_York] PHP Parse error:  syntax error, unexpected T_ELSE, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 70
+[05-Nov-2013 22:34:38 America/New_York] PHP Parse error:  syntax error, unexpected T_ELSE, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 67
+[05-Nov-2013 22:36:44 America/New_York] PHP Fatal error:  Cannot use object of type stdClass as array in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 25
+[05-Nov-2013 22:53:19 America/New_York] PHP Parse error:  syntax error, unexpected ';' in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 34
+[05-Nov-2013 23:03:36 America/New_York] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 34
+[05-Nov-2013 23:06:59 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 35
+[05-Nov-2013 23:10:13 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 58
+[05-Nov-2013 23:10:41 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 59
+[05-Nov-2013 23:10:42 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 59
+[05-Nov-2013 23:10:44 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 59
+[05-Nov-2013 23:10:48 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 56
+[05-Nov-2013 23:11:02 America/New_York] PHP Parse error:  syntax error, unexpected $end in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 56
+[05-Nov-2013 23:11:42 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 56
+[05-Nov-2013 23:12:47 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 56
+[05-Nov-2013 23:13:07 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 41
+[05-Nov-2013 23:13:50 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 41
+[05-Nov-2013 23:13:58 America/New_York] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 42
+[05-Nov-2013 23:14:08 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 41
+[05-Nov-2013 23:14:14 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 41
+[05-Nov-2013 23:14:51 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 35
+[05-Nov-2013 23:15:09 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 34
+[05-Nov-2013 23:15:13 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 34
+[05-Nov-2013 23:22:25 America/New_York] PHP Parse error:  syntax error, unexpected '{' in /home/raspipw/public_html/clique/cbe/application/views/auth.php on line 2
+[05-Nov-2013 23:35:19 America/New_York] PHP Parse error:  syntax error, unexpected '{' in /home/raspipw/public_html/clique/cbe/application/views/auth.php on line 3
+[05-Nov-2013 23:35:20 America/New_York] PHP Parse error:  syntax error, unexpected '{' in /home/raspipw/public_html/clique/cbe/application/views/auth.php on line 3
+[05-Nov-2013 23:35:24 America/New_York] PHP Parse error:  syntax error, unexpected '{' in /home/raspipw/public_html/clique/cbe/application/views/auth.php on line 3
+[05-Nov-2013 23:37:58 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/raspipw/public_html/clique/cbe/application/views/auth.php on line 23
+[05-Nov-2013 23:57:43 America/New_York] PHP Parse error:  syntax error, unexpected T_ELSE in /home/raspipw/public_html/clique/cbe/application/views/auth.php on line 5
+[06-Nov-2013 00:11:10 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 29
+[06-Nov-2013 00:11:13 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 29
+[06-Nov-2013 00:11:14 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 29
+[06-Nov-2013 00:11:15 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 29
+[06-Nov-2013 00:11:20 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/auth.php on line 29
+[06-Nov-2013 08:38:24 America/New_York] PHP Parse error:  syntax error, unexpected ')' in /home/raspipw/public_html/clique/cbe/application/controllers/user.php on line 9
+[06-Nov-2013 09:14:00 America/New_York] PHP Parse error:  syntax error, unexpected ';', expecting '(' in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 11
+[06-Nov-2013 09:14:12 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 76
+[06-Nov-2013 09:14:23 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 76
+[06-Nov-2013 09:17:15 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 92
+[06-Nov-2013 09:39:10 America/New_York] PHP Parse error:  syntax error, unexpected '[' in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 52
+[06-Nov-2013 09:39:11 America/New_York] PHP Parse error:  syntax error, unexpected '[' in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 52
+[06-Nov-2013 09:39:16 America/New_York] PHP Parse error:  syntax error, unexpected '[' in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 52
+[06-Nov-2013 09:39:33 America/New_York] PHP Parse error:  syntax error, unexpected '[' in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 52
+[06-Nov-2013 10:01:02 America/New_York] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/raspipw/public_html/clique/cbe/application/views/auth.php on line 23
+[06-Nov-2013 10:08:34 America/New_York] PHP Parse error:  syntax error, unexpected T_STRING in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 75
+[06-Nov-2013 12:45:09 America/New_York] PHP Parse error:  syntax error, unexpected ';' in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 82
+[06-Nov-2013 12:45:24 America/New_York] PHP Parse error:  syntax error, unexpected ';' in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 82
+[06-Nov-2013 12:47:17 America/New_York] PHP Fatal error:  Cannot use object of type stdClass as array in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 104
+[08-Nov-2013 11:45:15 America/New_York] PHP Fatal error:  Class 'Courses_model' not found in /home/raspipw/public_html/clique/cbe/system/core/Loader.php on line 303
+[08-Nov-2013 12:00:08 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/raspipw/public_html/clique/cbe/application/models/courses_model.php on line 72
+[08-Nov-2013 12:00:13 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/raspipw/public_html/clique/cbe/application/models/courses_model.php on line 72
+[08-Nov-2013 12:01:07 America/New_York] PHP Fatal error:  Call to a member function getCourseData() on a non-object in /home/raspipw/public_html/clique/cbe/application/controllers/courses.php on line 8
+[08-Nov-2013 12:16:13 America/New_York] PHP Parse error:  syntax error, unexpected '[' in /home/raspipw/public_html/clique/cbe/application/controllers/courses.php on line 8
+[08-Nov-2013 12:17:12 America/New_York] PHP Fatal error:  Cannot use object of type stdClass as array in /home/raspipw/public_html/clique/cbe/application/controllers/courses.php on line 11
+[08-Nov-2013 12:17:40 America/New_York] PHP Parse error:  syntax error, unexpected T_STRING in /home/raspipw/public_html/clique/cbe/application/controllers/courses.php on line 12
+[08-Nov-2013 12:22:40 America/New_York] PHP Parse error:  syntax error, unexpected T_INC, expecting ')' in /home/raspipw/public_html/clique/cbe/application/controllers/courses.php on line 10
+[08-Nov-2013 12:22:47 America/New_York] PHP Parse error:  syntax error, unexpected T_INC, expecting ')' in /home/raspipw/public_html/clique/cbe/application/controllers/courses.php on line 10
+[08-Nov-2013 12:27:29 America/New_York] PHP Parse error:  syntax error, unexpected ')' in /home/raspipw/public_html/clique/cbe/application/models/courses_model.php on line 10
+[08-Nov-2013 12:27:32 America/New_York] PHP Parse error:  syntax error, unexpected ')' in /home/raspipw/public_html/clique/cbe/application/models/courses_model.php on line 10
+[08-Nov-2013 13:34:19 America/New_York] PHP Fatal error:  Call to undefined method Courses_model::getCourseData() in /home/raspipw/public_html/clique/cbe/application/controllers/courses.php on line 13
+[08-Nov-2013 13:40:46 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/raspipw/public_html/clique/cbe/application/models/courses_model.php on line 79
+[08-Nov-2013 13:41:02 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/raspipw/public_html/clique/cbe/application/models/courses_model.php on line 114
+[08-Nov-2013 13:42:13 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/raspipw/public_html/clique/cbe/application/models/courses_model.php on line 106
+[08-Nov-2013 13:51:58 America/New_York] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home/raspipw/public_html/clique/cbe/application/models/courses_model.php on line 110
+[08-Nov-2013 13:52:17 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/models/courses_model.php on line 110
+[08-Nov-2013 13:52:19 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/models/courses_model.php on line 110
+[08-Nov-2013 13:52:36 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/models/courses_model.php on line 111
+[08-Nov-2013 13:52:43 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/models/courses_model.php on line 111
+[10-Nov-2013 21:17:34 America/New_York] PHP Parse error:  syntax error, unexpected '[' in /home/raspipw/public_html/clique/cbe/application/controllers/courses.php on line 14
+[11-Nov-2013 13:27:58 America/New_York] PHP Fatal error:  Call to undefined method Clique_model::addClique() in /home/raspipw/public_html/clique/cbe/application/controllers/clique.php on line 9
+[11-Nov-2013 13:39:59 America/New_York] PHP Fatal error:  Call to a member function result() on a non-object in /home/raspipw/public_html/clique/cbe/application/models/clique_model.php on line 14
+[11-Nov-2013 15:17:18 America/New_York] PHP Fatal error:  Cannot redeclare Clique_model::getClique() in /home/raspipw/public_html/clique/cbe/application/models/clique_model.php on line 20
+[11-Nov-2013 15:26:24 America/New_York] PHP Fatal error:  Call to undefined function addUserToClique() in /home/raspipw/public_html/clique/cbe/application/models/clique_model.php on line 12
+[11-Nov-2013 15:26:47 America/New_York] PHP Fatal error:  Call to undefined function addUserToClique() in /home/raspipw/public_html/clique/cbe/application/models/clique_model.php on line 12
+[11-Nov-2013 15:27:01 America/New_York] PHP Fatal error:  Call to undefined function addUserToClique() in /home/raspipw/public_html/clique/cbe/application/models/clique_model.php on line 17
+[11-Nov-2013 15:27:02 America/New_York] PHP Fatal error:  Call to undefined function addUserToClique() in /home/raspipw/public_html/clique/cbe/application/models/clique_model.php on line 17
+[11-Nov-2013 15:27:47 America/New_York] PHP Fatal error:  Call to undefined function addUserToClique() in /home/raspipw/public_html/clique/cbe/application/models/clique_model.php on line 12
+[11-Nov-2013 15:28:18 America/New_York] PHP Fatal error:  Call to undefined function addUserToClique() in /home/raspipw/public_html/clique/cbe/application/models/clique_model.php on line 12
+[11-Nov-2013 15:29:40 America/New_York] PHP Fatal error:  Call to undefined function addUserToClique() in /home/raspipw/public_html/clique/cbe/application/models/clique_model.php on line 12
+[11-Nov-2013 15:30:05 America/New_York] PHP Fatal error:  Call to undefined function getClique() in /home/raspipw/public_html/clique/cbe/application/models/clique_model.php on line 12
+[11-Nov-2013 15:40:59 America/New_York] PHP Fatal error:  Call to a member function result() on a non-object in /home/raspipw/public_html/clique/cbe/application/models/clique_model.php on line 24
+[12-Nov-2013 11:52:50 America/New_York] PHP Fatal error:  Call to a member function row_array() on a non-object in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 126
+[12-Nov-2013 11:53:27 America/New_York] PHP Fatal error:  Class 'Auth_model' not found in /home/raspipw/public_html/clique/cbe/system/core/Loader.php on line 303
+[12-Nov-2013 11:53:28 America/New_York] PHP Fatal error:  Class 'Auth_model' not found in /home/raspipw/public_html/clique/cbe/system/core/Loader.php on line 303
+[12-Nov-2013 12:29:49 America/New_York] PHP Fatal error:  Can't use method return value in write context in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 116

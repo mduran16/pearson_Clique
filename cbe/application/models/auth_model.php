@@ -108,6 +108,24 @@ class Auth_model extends CI_Model {
             return $return;
         }
 
-        }
     }
+
+    function isUserInDB($userID){
+        $sql = "SELECT * FROM users WHERE userID = " . $userID;
+        $result = $this->db->query($sql);
+        if($result->num_rows() == 0)
+            return false;
+        else
+            return true;
+    }
+
+    function addUserToDB($userID,$username){
+        $sql = "INSERT INTO users(userID,username) VALUES (".$userID.",'".$username."')";
+        $result = $this->db->query($sql);  
+    }
+
+    function getNewAccessToken(){
+        return true;
+    }
+}
 ?>

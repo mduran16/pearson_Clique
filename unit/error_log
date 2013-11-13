@@ -1,0 +1,2 @@
+[05-Nov-2013 18:14:08 America/New_York] PHP Warning:  require_once(lib/CryptLib/bootstrap.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/raspipw/public_html/clique/unit/api.php on line 7
+[05-Nov-2013 18:14:08 America/New_York] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'lib/CryptLib/bootstrap.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/raspipw/public_html/clique/unit/api.php on line 7

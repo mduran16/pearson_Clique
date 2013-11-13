@@ -132,5 +132,42 @@ class Courses_model extends CI_Model {
         return $coursedata;
     }
 
+    function getCourseRoster($id){
+        $roster = array();
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://m-api.ecollege.com/courses/" . $id . "/roster");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-Authorization: Access_Token access_token=" . $this->session->userdata("access_token")));
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); 
+         
+        $api_response = curl_exec($ch);
+
+        $curlError = curl_error($ch);
+         
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+         
+        if($curlError){
+         
+            $roster = false; 
+         
+        } else if(intval($http_code / 100) >=4){
+
+            $roster =  false;
+         
+        } else {
+            $roster = json_decode($api_response);
+            $roster = get_object_vars($roster);
+            $roster = $roster["roster"];
+
+            for($i = 0; $i < count($roster); $i++){
+                $roster[$i] = get_object_vars($roster[$i]);
+            }
+        }
+
+        return $roster;
+    }
+
+
+
 }
 ?>

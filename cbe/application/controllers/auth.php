@@ -29,13 +29,17 @@ class Auth extends CI_Controller {
 					$this->session->set_userdata("clientString", $userdata["clientString"]);
 
 					$this->session->set_userdata("courses",$result[2]);
+
+					if(!$this->auth_model->isUserInDB($this->session->userdata("id"))){
+						$this->auth_model->addUSerToDB($this->session->userdata("id"),$this->session->userdata("userName"));
+					}
 				}
 			}	
 		}
 		if($this->input->get('logout'))
 			$this->session->sess_destroy();
 		
-		$this->load->view('auth');
+		$this->load->view('auth_view');
 
 	
 	}

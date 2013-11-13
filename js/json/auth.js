@@ -32,6 +32,7 @@ function changepage(link, id){
 		auth();
 		$("#content").load(link)
 		$("#content").attr("class","content")
+		$("#content").attr("ref",id)
 	});
 }
 
