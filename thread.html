@@ -1,0 +1,15 @@
+<div id="messageContainer">
+</div>
+
+
+<div class="col-md-12">
+	<div class="field-box">
+        <div class="col-md-12">
+           	<textarea id="message" name="message" class="form-control" rows="4" style="width:100%"></textarea>
+        </div>
+        <div class="col-md-12" style="margin-top:20px">
+        	<a href="javascript:;" class="btn-flat danger" onclick="threadSendMessage($('#content').attr('ref'),$('#message').val());$('#message').val('')">Send</a>
+        </div>
+    </div>
+</div>
+<script src="js/json/thread.js"></script>

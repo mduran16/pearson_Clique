@@ -89,3 +89,30 @@
 [12-Nov-2013 11:53:27 America/New_York] PHP Fatal error:  Class 'Auth_model' not found in /home/raspipw/public_html/clique/cbe/system/core/Loader.php on line 303
 [12-Nov-2013 11:53:28 America/New_York] PHP Fatal error:  Class 'Auth_model' not found in /home/raspipw/public_html/clique/cbe/system/core/Loader.php on line 303
 [12-Nov-2013 12:29:49 America/New_York] PHP Fatal error:  Can't use method return value in write context in /home/raspipw/public_html/clique/cbe/application/models/auth_model.php on line 116
+[14-Nov-2013 18:35:33 America/New_York] PHP Parse error:  syntax error, unexpected '(', expecting T_STRING or T_VARIABLE or '{' or '$' in /home/raspipw/public_html/clique/cbe/application/models/chat_model.php on line 11
+[14-Nov-2013 18:41:55 America/New_York] PHP Parse error:  syntax error, unexpected $end in /home/raspipw/public_html/clique/cbe/application/models/chat_model.php on line 30
+[14-Nov-2013 22:45:49 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/raspipw/public_html/clique/cbe/application/models/chat_model.php on line 21
+[14-Nov-2013 22:50:55 America/New_York] PHP Fatal error:  Class 'Chat_model' not found in /home/raspipw/public_html/clique/cbe/system/core/Loader.php on line 303
+[14-Nov-2013 22:51:05 America/New_York] PHP Fatal error:  Class 'Chat_model' not found in /home/raspipw/public_html/clique/cbe/system/core/Loader.php on line 303
+[14-Nov-2013 22:51:12 America/New_York] PHP Fatal error:  Call to a member function result() on a non-object in /home/raspipw/public_html/clique/cbe/application/models/chat_model.php on line 24
+[14-Nov-2013 22:51:30 America/New_York] PHP Fatal error:  Call to a member function result() on a non-object in /home/raspipw/public_html/clique/cbe/application/models/chat_model.php on line 24
+[19-Nov-2013 14:30:24 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 23
+[19-Nov-2013 14:32:02 America/New_York] PHP Fatal error:  Call to a member function sendInvite() on a non-object in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 17
+[19-Nov-2013 14:58:27 America/New_York] PHP Fatal error:  Call to undefined method thread_model::result() in /home/raspipw/public_html/clique/cbe/application/models/thread_model.php on line 23
+[20-Nov-2013 12:36:04 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 12:36:22 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 12:38:59 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 12:40:57 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 12:52:21 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 12:53:08 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 12:56:21 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 12:57:04 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 12:57:19 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 12:59:25 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 12:59:51 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 13:00:14 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 13:01:52 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 13:11:25 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 13:12:32 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 13:13:12 America/New_York] PHP Parse error:  syntax error, unexpected ',' in /home/raspipw/public_html/clique/cbe/application/controllers/thread.php on line 26
+[20-Nov-2013 15:09:08 America/New_York] PHP Fatal error:  Cannot redeclare Clique_model::getUserCliques() in /home/raspipw/public_html/clique/cbe/application/models/clique_model.php on line 25

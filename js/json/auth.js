@@ -17,6 +17,8 @@ function auth(){
 				if($("#content").attr("class") != "content")
 					$("#content").attr("class","content")
 
+				$('#userdata').attr('userid',response.id)
+				$('#userdata').attr('username',response.userName)
 			}
 			else {
 				$('#sidebar').empty();

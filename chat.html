@@ -1,16 +1,15 @@
  <div id="pad-wrapper">
-    <div class="row col-md-12">
-        <div class="row col-md-12">
-            <h3>Chat Name</h3>
-        </div>
+    <div class="col-md-12" style="padding-bottom:20px;">
+        <h3>Study Lounge</h3>
     </div>
-    <div class="row col-md-12">
+    <div class="col-md-12">
         <div id="maincontainer" class="row col-md-12">
-            <div id="users" class="row col-md-3">
-                <table class="table table-hover">
+        <!--
+            <div id="users" class="col-md-3" style="padding:0;">
+                <table class="table table-hover" style="height:150px;overflow-y:scroll;margin-bottom:0px">
                     <thead>
                         <tr>
-                            <th class="col-md-4">users</th>
+                            <th class="col-md-3">users</th>
                         </tr>
                     </thead>
                     <tbody id="noticesTable">
@@ -20,35 +19,37 @@
                     </tbody>
                 </table>
             </div>
-            <div class="row col-md-9">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th class="col-md-4">Messages</th>
-                        </tr>
-                    </thead>
-                    <tbody id="noticesTable">
-                        <tr><td><div class="col-md-12"><p>[11/13/2013][12:13AM] Alan: adwawd</p></div></td></tr>
-                        <tr><td><div class="col-md-12"><p>[11/13/2013][12:47AM] Alan: ttegqrd agwgg rrrrykj awdawsegsg segsg</p></div></td></tr>
-                        <tr><td><div class="col-md-12"><p>[11/13/2013][12:48AM] Howard: eqagagaegahh hr hbfhsfrh ss sfshssw rrh</p></div></td></tr>
-                        <tr><td><div class="col-md-12"><p>[11/13/2013][01:15AM] John:  ne hqe gq ugeoqehg o ughqeoghqego eqfeqehw</p></div></td></tr>
-                        <tr><td><div class="col-md-12"><p>[11/13/2013][02:32AM] Howard: fnbkj ubkjfnef bqeipuvbiueqhbfpb</p></div></td></tr>
-                        <tr><td><div class="col-md-12"><p>[11/13/2013][06:53AM] Alan: kk</p></div></td></tr>
-                        <tr><td>
-                            <form>
-                                <div class="col-md-10">
-                                    <input class="form-control" type="text">
-                                </div>
-                                <div class="col-md-2">
-                                    <div align="center">
-                                        <a class="btn-flat" align="center">Submit</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </td></tr>
-                    </tbody>
-                </table>
+            -->
+            <div class="col-xl-12">
+                <div id="messages" style="height:300px;overflow-y:auto;overflow-x:hidden;margin-bottom:10px;border:#d6e2eb 1px solid;padding-top:10px"></div>
+            </div>
+            <div class="col-xl-12">
+                <div class="input-group"  style="width:100%;">
+                    <input id="message" name="message" type="text" class="form-control" style="border-radius: 0;">
+                    <span class="input-group-btn">
+                        <a href="javascript:;" class="btn btn-info" type="button" style="border-radius: 0;" onclick="submitMessage($('#content').attr('ref'),$('#userdata').attr('userid'),escape($('#message').val()));    $('#message').val('');">Send</a>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xl-12" style="margin-top:10px">
+                <div class="btn-group large">
+                        <button class="glow left">
+                            <i class="icon-calendar" style="font-size:24px"></i>
+                        </button>
+                        <button class="glow middle">
+                            <i class="icon-bar-chart" style="font-size:24px"></i>
+                        </button>
+                        <button class="glow middle">
+                            <i class="icon-tasks" style="font-size:24px"></i>
+                        </button>
+                        <button class="glow right">
+                            <i class="icon-pencil" style="font-size:24px"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="js/json/chat.js"></script>

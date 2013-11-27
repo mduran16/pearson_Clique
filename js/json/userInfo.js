@@ -1,6 +1,6 @@
 $.ajax({
-  url: "http://clique.raspi.pw/cbe/index.php/user?userdata=true",
-  type: "GET",
+	url: "http://clique.raspi.pw/cbe/index.php/user?userdata=true",
+	type: "GET",
 }).success(function(response) {
 	var response = $.parseJSON(response);
 	$("#id").val(response.id)
