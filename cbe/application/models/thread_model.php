@@ -91,45 +91,47 @@ class thread_model extends CI_Model {
         $this->db->query($sql);
     }
 
-
-/*
-    -new clique is added to clique table
-    -new chat room is created with cliqueID
-    -both the invited user and the user who sent the invite are added to the new clique (cliqueRelations Table)
-*/
-
     //adds user to the clique and deletes the message
     function acceptInvite($messageID, $userID){
         $inviteData = $this->getMessage($messageID);
-        var_dump($inviteData);
+        //var_dump($inviteData);
         if(is_numeric($inviteData['content'])){
             $this->addUserToClique($userID, 0+$inviteData['content']);
         }
         else{
-            $cliqueID = $this->createClique($inviteData['content'], 9005577);
+            $split = explode('_',$inviteData['content']);
+            $cliqueID = $this->createClique($split[0], $split[1]);
             $this->addUserToClique($inviteData['senderID'],$cliqueID);
             $this->addUserToClique($userID, $cliqueID);
         }
-        $this->markMessageRead($messageID);
-        
-        
+        $this->markMessageRead($messageID);    
     }
 
     function createClique($cliqueName,$cliqueParent){
         $sql = "INSERT INTO cliques(cliqueName, cliqueParent) VALUES ('" . $cliqueName . "'," . $cliqueParent . ")";
         $this->db->query($sql);
-
-        $sql = "SELECT cliqueID FROM cliques WHERE cliqueName = '" . $cliqueName . "'";
+        $sql = "SELECT cliqueID FROM cliques WHERE cliqueName = '" . $cliqueName . "' LIMIT 0,1";
         $result = $this->db->query($sql);
         $row = $result->row_array();
+        if(isset($row['cliqueID'])){
+            $this->createChatroom($cliqueName, $row['cliqueID']);
+            return $row['cliqueID'];
+        }
 
-        $this->createChatroom($cliqueName, $row['cliqueID']);
-
-        return $row['cliqueID'];
+        return false;
     }
 
     function createChatroom($cliqueName, $cliqueID){
-        $sql = "INSERT INTO chatRooms (roomParent, roomName) VALUES (" . $cliqueID . ",'".$cliqueName." Study Lounge')";
+        $sql = "INSERT INTO chatRooms (roomParent, roomName) VALUES (" . $cliqueID . ",'".$cliqueName."')";
+        $this->db->query($sql);
+        $sql = "SELECT chatRooms.room_id FROM chatRooms WHERE roomName = '" . $cliqueName . "' AND roomParent = " . $cliqueID;
+        var_dump($sql);
+        $result = $this->db->query($sql);
+        $row = $result->row_array();
+        //var_dump($row);
+        $sql =  "INSERT INTO chatMessages (chatRoomID,userID,message) VALUES (" . $row['room_id'] . ",0,'This is the real time chat messaging system.')";
+        $this->db->query($sql);
+        $sql =  "INSERT INTO chatMessages (chatRoomID,userID,message) VALUES (" . $row['room_id'] . ",0,'Use this to communicate and collaborate with your peers.')";
         $this->db->query($sql);
         return true;
     }
@@ -152,8 +154,20 @@ class thread_model extends CI_Model {
     }
 
     function markMessageRead($messageID){
+        echo "innerTest1";
         $sql = "UPDATE privateMessages SET isRead = 1 WHERE messageID = ". $messageID;
         $this->db->query($sql);
+        return true;
+    }
+
+    function getNotifications($userID){
+        $sql = "SELECT privateMessages.*, users.username FROM privateMessages, users WHERE privateMessages.recipientID = " . $userID . " AND isRead = 0 AND users.userID = privateMessages.senderID ORDER BY privateMessages.messageDate DESC";
+        $result = $this->db->query($sql);
+        $result = $result->result();
+        for($i = 0; $i < count($result);$i++){
+            $result[$i] = get_object_vars($result[$i]);
+        }
+        return $result;
     }
 
 }

@@ -1,10 +1,5 @@
 <div id="pad-wrapper">
     <div class="row col-md-12">
-        <div class="row col-md-12">
-            <h3>Clique Name</h3>
-        </div>
-    </div>
-    <div class="row col-md-12">
          <div class="row col-md-6">
             <h3>Users</h3>
             <table class="table table-hover">
@@ -48,12 +43,26 @@
             <div class="row col-md-12">
                 <div class="col-xs-2">
                     <a class="btn-glow primary" onclick="changepage('chat.html',$('#content').attr('ref'))">Chat</a>
-                 </div>
-                 <div class="col-xs-2">
-                <form action="https://plus.google.com/hangouts/_" method="GET"><input type=hidden name="gid" value="79920877738"><input type=submit class="btn-glow primary" value="G+ Hangout"></input></form></div>
+                </div>
+                <div class="col-xs-3">
+                    <a class="btn-glow primary" id="hangoutButton" href="javascript:;" target="_blank">G+ Hangout</a>
+                    <script>
+                        $.ajax({
+                            url: "http://clique.raspi.pw/cbe/index.php/clique?gethangouturl=true&cliqueID=" + $('#content').attr('ref'),
+                            type: "GET",
+                            cache: false,
+                        }).success(function(response) {
+                            var response = $.parseJSON(response);
+                            if(response.length){
+                                $('#hangoutButton').attr('href',decodeURIComponent(response))
+                            }
+                            else{
+                                $('#hangoutButton').attr('href','https://plus.google.com/hangouts/_?gid=79920877738&gd=' + $('#content').attr('ref'))
+                            }
+                        });
+                    </script>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
 <script src="js/json/clique.js"></script>

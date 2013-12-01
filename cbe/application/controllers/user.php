@@ -3,8 +3,15 @@
 class User extends CI_Controller {
 
 	public function index()
-	{
-		if($this->input->get("userdata"))
-			$this->load->view("user_view");
+	{	
+
+		$this->load->model('user_model');
+		//http://clique.raspi.pw/cbe/index.php/user?userdata=true&userID=?
+		if($this->input->get("userdata") == true){
+			$result = $this->user_model->getUserdata($this->input->get('userID'));
+			$data = array("data" => $result);
+			$this->load->view("user_view",$data);
+		}
+		$this->load->view("user_view");
 	}
 }

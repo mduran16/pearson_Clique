@@ -29,11 +29,20 @@ class Thread extends CI_Controller {
 		}
 
 		//http://clique.raspi.pw/cbe/index.php/thread?acceptInvite=true&messageID=?
-		if($this->input->get("acceptInvite") == true){
+		if($this->input->get("acceptInvite") == 'true'){
 			$result = $this->thread_model->acceptInvite($this->input->get('messageID'),$this->session->userdata('id'));
 			$threads = array("threads" => $result);
 			$this->load->view("thread_view",$threads);
 		}
+
+		if($this->input->get("acceptInvite") == 'false'){
+			echo "test1";
+			$result = $this->thread_model->markMessageRead($this->input->get('messageID'));
+			echo "test2";
+			$threads = array("threads" => $result);
+			$this->load->view("thread_view",$threads);
+		}
+		
 
 		//http://clique.raspi.pw/cbe/index.php/thread?sendMessage=true&senderID=1&recieverID=1&message=hello
 		if($this->input->get("sendMessage") == true){
@@ -73,6 +82,13 @@ class Thread extends CI_Controller {
 		//http://clique.raspi.pw/cbe/index.php/thread?getThreads=true
 		if($this->input->get("getThreads") == true){
 			$result = $this->thread_model->getThreads($this->session->userdata("id"));
+			$threads = array("threads" => $result);
+			$this->load->view("thread_view",$threads);
+		}
+
+		//http://clique.raspi.pw/cbe/index.php/thread?getNotifications=true
+		if($this->input->get("getNotifications") == true){
+			$result = $this->thread_model->getNotifications($this->session->userdata("id"));
 			$threads = array("threads" => $result);
 			$this->load->view("thread_view",$threads);
 		}

@@ -33,6 +33,7 @@ function refreshMessages(){
 	$.ajax({
   		url: "http://clique.raspi.pw/cbe/index.php/thread?getConversation=true&otherID=" + $("#content").attr("ref"),
   		type: "GET",
+  		cache: false,
 	}).success(function(response) {
 		//console.log('http://clique.raspi.pw/cbe/index.php/thread?getConversation=true&otherID=' + $("#content").attr("ref"))
 		var response = $.parseJSON(response);

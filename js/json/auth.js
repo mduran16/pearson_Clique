@@ -2,11 +2,12 @@ function auth(){
 	$.ajax({
 		url: "/cbe/index.php/auth",
 		type: "json",
+		cache: false,
 		}).complete(function(response) {
 			var response = $.parseJSON(response.responseText);
 			if(response.logged_in == true){
-				if(!$.trim( $('#sidebar').html() ).length)
-					$("#sidebar").load("sidebar.html");
+				if(!$.trim( $('#sidebar-nav').html() ).length)
+					$("#sidebar-nav").load("sidebar.html");
 
 				if(!$.trim( $('#navbar_menu').html() ).length)
 				$("#navbar_menu").load("navbar_menu.html")
@@ -21,7 +22,7 @@ function auth(){
 				$('#userdata').attr('username',response.userName)
 			}
 			else {
-				$('#sidebar').empty();
+				$('#sidebar-nav').empty();
 				$("#content").attr("class","")
 				$("#content").load("signin.html")
 

@@ -1,10 +1,12 @@
+<li id="helloUser" class="settings hidden-xs hidden-sm" style="color: rgb(214,214,214);padding:13px 15px 8px;">
+</li>
 <li class="dropdown">
     <a href="#" class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown">
         Your account
         <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-        <li><a href="javascript:;" onclick="changepage('personal-info.html')">Personal info</a></li>
+        <li><a href="javascript:;" onclick="changepage('personal-info.html',$('#userdata').attr('userid'))">Personal info</a></li>
     </ul>
 </li>
 <li class="settings hidden-xs hidden-sm">
@@ -12,3 +14,44 @@
         <i class="icon-share-alt"></i>
     </a>
 </li>
+
+<script>
+  // navbar notification popups
+  $(".notification-dropdown").each(function (index, el) {
+    var $el = $(el);
+    var $dialog = $el.find(".pop-dialog");
+    var $trigger = $el.find(".trigger");
+    
+    $dialog.click(function (e) {
+        e.stopPropagation()
+    });
+    $dialog.find(".close-icon").click(function (e) {
+      e.preventDefault();
+      $dialog.removeClass("is-visible");
+      $trigger.removeClass("active");
+    });
+    $("body").click(function () {
+      $dialog.removeClass("is-visible");
+      $trigger.removeClass("active");
+    });
+
+    $trigger.click(function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // hide all other pop-dialogs
+      $(".notification-dropdown .pop-dialog").removeClass("is-visible");
+      $(".notification-dropdown .trigger").removeClass("active")
+
+      $dialog.toggleClass("is-visible");
+      if ($dialog.hasClass("is-visible")) {
+        $(this).addClass("active");
+      } else {
+        $(this).removeClass("active");
+      }
+    });
+  });
+
+  $('#helloUser').html("Hello " + $('#userdata').attr('username'))
+
+</script>

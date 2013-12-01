@@ -4,6 +4,7 @@ Course header info query
 $.ajax({
   url: "http://clique.raspi.pw/cbe/index.php/courses",
   type: "GET",
+  cache: false,
 }).success(function(response) {
 	var response = $.parseJSON(response);
 	var r = new Array(), j = -1;
@@ -25,50 +26,62 @@ Course Roster Query
 $.ajax({
   url: "http://clique.raspi.pw/cbe/index.php/courses?id=" + $("#content").attr("ref") + "&classmates=true",
   type: "GET",
+  cache: false,
 }).success(function(response) {
 	var response = $.parseJSON(response);
-
+	userID = $('#userdata').attr('userID')
 	var r = new Array(), j = -1;
 	//console.log(JSON.stringify(response))
 	if(response.length > 0){
 	 	for (var i = 0, size=response.length; i<size; i++){
+	 		if(response[i]["id"] == userID){
+	 			$('#userdata').attr('courserole',response[i]["roleType"])
+	 		}
 			if(j==-1)
 				r[++j] = '<tr class="first" '
 			else
 				r[++j] = '<tr '
 			r[++j] = 'userid='
 			r[++j] = response[i]["id"]
-			r[++j] = ">"
-			r[++j] ='<td><a href="javascript:;" onclick="changepage(\'user-profile.html\',\''
-			r[++j] = response[i]["id"]
-			r[++j] = '\')"><h5>';
+			r[++j] = "><td>"
+			if($('#userdata').attr('courserole') != 'STUD' || $('#userdata').attr('userid') == response[i]['id']){
+				r[++j] ='<a href="javascript:;" onclick="changepage(\'user-profile.html\',\''
+				r[++j] = response[i]["id"]
+				r[++j] = '\')">'
+			}
+			r[++j] = '<h5>';
 			r[++j] = response[i]["loginId"]
 			//r[++j] = response[i]["firstName"]
 			//r[++j] = " "
 			//r[++j] = response[i]["lastName"];
 			r[++j] = '</h5></a></td>';
 
-
-			r[++j] = '<td>'
-			r[++j] = '<div class="btn-group settings"><button class="btn glow dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button><ul class="dropdown-menu"><li><a href="javascript:;" onclick="messageBox(' + i + ',$(this).closest(\'tr\').attr(\'userid\'))">Private Message</a></li>';
-			
-			if(response[i]["roleType"] == "STUD"){
-				r[++j] = '<li><a href="javascript:;" onclick="inviteBox(' + i + ',$(this).closest(\'tr\').attr(\'userid\'))">Invite</a></li>';
+			if(response[i]["id"] != userID){
+				r[++j] = '<td>'
+				r[++j] = '<div class="btn-group settings"><button class="btn glow dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button><ul class="dropdown-menu"><li><a href="javascript:;" onclick="messageBox(' + i + ',$(this).closest(\'tr\').attr(\'userid\'))">Private Message</a></li>';
+				
+				if(response[i]["roleType"] == "STUD"){
+					r[++j] = '<li><a href="javascript:;" onclick="inviteBox(' + i + ',$(this).closest(\'tr\').attr(\'userid\'))">Invite</a></li>';
+				}
+				r[++j] = '</ul></div>';
+				r[++j] = "</td>"
 			}
-			r[++j] = '</ul></div>';
-			r[++j] = "</td>"
-
+			else{
+				r[++j] = "<td></td>"
+			}
 
 			
-			if(response[i]["roleType"] == "STUD"){
+			if(response[i]["roleType"] == "STUD" && response[i]['id'] != userID){
 				r[++j] = '<td><a class="btn-flat success" disabled>Student</a></td>'
 			}
-			else if(response[i]["roleType"] == "PROF"){
+			else if(response[i]["roleType"] == "PROF" && response[i]['id'] != userID){
 				r[++j] = '<td><a class="btn-flat danger" disabled>Professor</a></td>';
 			}
-			else if(response[i]["roleType"] == "TAST"){
-				r[++j] = '<td><a class="btn-flat info " disabled>TA</a></td>';
-
+			else if(response[i]["roleType"] == "TAST" && response[i]['id'] != userID){
+				r[++j] = '<td><a class="btn-flat info " disabled>Assistant</a></td>';
+			}
+			else{
+				r[++j] = '<td><a class="btn-flat primary" disabled>YOU</a></td>';
 			}
 
 
@@ -87,30 +100,62 @@ $.ajax({
 /*
 your cliques box
 */
-$.ajax({
-  url: "http://clique.raspi.pw/cbe/index.php/clique?getUserCliques=true&parent=" + $("#content").attr("ref"),
-  type: "GET",
-}).success(function(response) {
-	var response = $.parseJSON(response);
-	var r = new Array(), j = -1;
-	if(response.length > 0){
-	 	for (var i = 0, size=response.length; i<size; i++){
-			if(j==-1)
-				r[++j] = '<tr class="first">'
-			else
-				r[++j] = '<tr>'
-			r[++j] ='<td><h4><a href="javascript:;" onclick="changepage(\'clique.html\',\'' + response[i]["cliqueID"] + '\')">';
-			r[++j] = response[i]["cliqueName"];
-			r[++j] = '</a></h4></td>';
-			r[++j] = '</tr>';
-	 	}
-	 }
-	 else{
-	 	r[++j] = '<tr class="first"><td><h4>You have yet to join any Cliques</h4></td></tr>'
-	 }
- 	$('#cliqueTable').html(r.join('')); 
-});
-
+if($('#userdata').attr('courserole') == 'PROF' || $('#userdata').attr('courserole') == 'TAST'){
+	console.log("http://clique.raspi.pw/cbe/index.php/clique?getCourseCliques=true&parent=" + $("#content").attr("ref"))
+	$.ajax({
+	  url: "http://clique.raspi.pw/cbe/index.php/clique?getCourseCliques=true&parent=" + $("#content").attr("ref"),
+	  type: "GET",
+	  cache: false,
+	}).success(function(response) {
+		var response = $.parseJSON(response);
+		//console.log(JSON.stringify(response));
+		var r = new Array(), j = -1;
+		if(response.length > 0){
+		 	for (var i = 0, size=response.length; i<size; i++){
+				if(j==-1)
+					r[++j] = '<tr class="first">'
+				else
+					r[++j] = '<tr>'
+				r[++j] ='<td><h4><a href="javascript:;" onclick="changepage(\'clique.html\',\'' + response[i]["cliqueID"] + '\')">';
+				r[++j] = response[i]["cliqueName"];
+				r[++j] = '</a></h4></td>';
+				r[++j] = '</tr>';
+		 	}
+		 }
+		 else{
+		 	r[++j] = '<tr class="first"><td><h4>You have yet to join any Cliques</h4></td></tr>'
+		 }
+	 	$('#cliqueTable').html(r.join('')); 
+	});
+}
+else{
+//console.log("http://clique.raspi.pw/cbe/index.php/clique?getUserCliques=true&parent=" + $("#content").attr("ref"))
+	$.ajax({
+	  url: "http://clique.raspi.pw/cbe/index.php/clique?getUserCliques=true&parent=" + $("#content").attr("ref"),
+	  type: "GET",
+	  cache: false,
+	}).success(function(response) {
+		var response = $.parseJSON(response);
+		//console.log(JSON.stringify(response));
+		var r = new Array(), j = -1;
+		if(response.length > 0){
+		 	for (var i = 0, size=response.length; i<size; i++){
+				if(j==-1)
+					r[++j] = '<tr class="first">'
+				else
+					r[++j] = '<tr>'
+				r[++j] ='<td><h4><a href="javascript:;" onclick="changepage(\'clique.html\',\'' + response[i]["cliqueID"] + '\')">';
+				r[++j] = response[i]["cliqueName"];
+				r[++j] = '</a></h4></td>';
+				r[++j] = '</tr>';
+		 	}
+		 }
+		 else{
+		 	r[++j] = '<tr class="first"><td><h4>You have yet to join any Cliques</h4></td></tr>'
+		 }
+	 	$('#cliqueTable').html(r.join('')); 
+	});
+}
 
 
 
@@ -170,6 +215,7 @@ function sendMessage(message,userID)
 	//console.log(userID)
 	$.ajax({
 		url: "http://clique.raspi.pw/cbe/index.php/thread?sendMessage=true&recieverID="+ userID + "&message=" + escape(message),
+		cache: false,
 	})
 
 	$('#messageBox').remove()
@@ -178,22 +224,17 @@ function sendMessage(message,userID)
 
 
 function sendInvite(userID){
-	//existing, cliques
-	//new, newname 
-	//console.log("user id: " + userID)
-	//console.log("choice: " + $("input[name='choice']:checked").val())
-	//console.log("existing clique: " + $("#cliques").val())
-	//console.log("new Clique Name: " + $("input[name='newname']").val())
 	if($("input[name='choice']:checked").val() == "existing"){
 		$.ajax({
-			url: "http://clique.raspi.pw/cbe/index.php/thread?sendInvite=true&recieverID="+userID+"&cliqueID="+$("#cliques").val()
+			url: "http://clique.raspi.pw/cbe/index.php/thread?sendInvite=true&recieverID="+userID+"&cliqueID="+$("#cliques").val(),
+			cache: false,
+			
 		})
-		//console.log("sent invite")
 	}
 	else{
-		//console.log("invite not sent");
 		$.ajax({
-			url: "http://clique.raspi.pw/cbe/index.php/thread?sendInvite=true&recieverID="+userID+"&cliqueID="+escape($("input[name='newname']").val())
+			url: "http://clique.raspi.pw/cbe/index.php/thread?sendInvite=true&recieverID="+userID+"&cliqueID="+escape($("input[name='newname']").val()) + "_" + $("#content").attr("ref"),
+			cache: false,
 		})
 	}
 
@@ -208,6 +249,7 @@ used to get a list of all cliques inside of an ajax callback
 function getCliqueList(callback){	
 	$.ajax({
 		url: "http://clique.raspi.pw/cbe/index.php/clique?getUserCliques=true&parent="+$("#content").attr("ref"),
+		cache: false,
 		type: "GET",
 	}).success(function(response) {
 		var response = $.parseJSON(response);

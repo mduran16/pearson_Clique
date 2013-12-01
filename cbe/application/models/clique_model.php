@@ -12,24 +12,24 @@ class Clique_model extends CI_Model {
         $this->addUserToClique($this->getClique($name),$this->session->userdata("id"));
     }
 
-    function getClique($name){
-        $id = $this->db->query("SELECT cliqueID FROM cliques WHERE cliqueName = '" . $name . "'");
+    function getClique($id){
+        $id = $this->db->query("SELECT * FROM cliques WHERE cliqueID = " . $id);
         $row = $id->row_array();
-        return $row['cliqueID'];
+        return $row;
     }
 
     function getUserCliques($userID,$parent){
         $sql = '';
+        //var_dump($this->session->userdata("role"));
         if($parent == false)
             $sql = "SELECT cliques.* FROM cliques, cliqueRelations WHERE cliques.cliqueID = cliqueRelations.cliqueID AND cliqueRelations.userID = " . $this->session->userdata("id");
-        elseif($this->session->userdata("role") == "PROF" || $this->session->userdata("role") == "TAST")
-            $sql = "SELECT cliques.* FROM cliques, cliqueRelations WHERE cliques.cliqueID = cliqueRelations.cliqueID AND cliques.cliqueParent = " . $parent;
+        //elseif($this->session->userdata("role") == "PROF" || $this->session->userdata("role") == "TAST")
+          //  $sql = "SELECT cliques.* FROM cliques, cliqueRelations WHERE cliques.cliqueID = cliqueRelations.cliqueID AND cliques.cliqueParent = " . $parent;
         else
             $sql = "SELECT cliques.* FROM cliques, cliqueRelations WHERE cliques.cliqueID = cliqueRelations.cliqueID AND cliqueRelations.userID = " . $this->session->userdata("id") . " AND cliques.cliqueParent = " . $parent;
-        
+        //echo ($sql);
         $cliques = $this->db->query($sql);
         $cliques = $cliques->result();
-
         for($i = 0; $i < count($cliques); $i++){
             $cliques[$i] = get_object_vars($cliques[$i]);
         }
@@ -37,7 +37,7 @@ class Clique_model extends CI_Model {
     }
 
     function getCourseCliques($parent){
-        $sql = "SELECT cliques.* FROM cliques, cliqueRelations WHERE cliques.cliqueID = cliqueRelations.cliqueID AND cliques.cliqueParent = " . $parent;
+        $sql = "SELECT cliques.* FROM cliques, cliqueRelations WHERE cliques.cliqueID = cliqueRelations.cliqueID AND cliques.cliqueParent = " . $parent . " GROUP BY cliques.cliqueID";
         
         $cliques = $this->db->query($sql);
         $cliques = $cliques->result();
@@ -52,16 +52,27 @@ class Clique_model extends CI_Model {
         echo "test";
     }
 
-    function addUserToClique($cliqueID, $userID){
-        $addUser = "INSERT INTO cliqueRelations (cliqueID, userID) VALUES (". $cliqueID . ",". $userID .")";
-        $query = $this->db->query($addUser);
+    function addUserToClique($cliqueID, $userID,$instructor){
+        $sql = "SELECT * FROM cliqueRelations WHERE cliqueID = " . $cliqueID . " AND userID = " . $userID;
+        $result = $this->db->query($sql);
+        $cliques = $result->result();
+
+        if(count($cliques) == 0)
+        {
+            if($instructor = false)
+                $addUser = "INSERT INTO cliqueRelations (cliqueID, userID) VALUES (". $cliqueID . ",". $userID .")";
+            else
+                $addUser = "INSERT INTO cliqueRelations (cliqueID, userID, isInstructor) VALUES (". $cliqueID . ",". $userID .",1)";
+            $query = $this->db->query($addUser);
+
+        }
     }
 
 
 
     function getCliqueUsers($cliqueID){
         $sql = '';
-        $sql = "SELECT users.* FROM users, cliqueRelations WHERE users.userID = cliqueRelations.userID AND cliqueRelations.cliqueID = " . $cliqueID;
+        $sql = "SELECT users.* FROM users, cliqueRelations WHERE cliqueRelations.isInstructor = 0 AND users.userID = cliqueRelations.userID AND cliqueRelations.cliqueID = " . $cliqueID;
         
         $cliques = $this->db->query($sql);
         $cliques = $cliques->result();
@@ -71,6 +82,20 @@ class Clique_model extends CI_Model {
         }
         //var_dump($cliques);
         return $cliques;
+    }
+
+
+    function addHangoutURL($cliqueID,$url){
+        $sql = "UPDATE cliques SET hangoutURL = '" . urlencode($url) . "' WHERE cliqueID = " . $cliqueID;
+        $this->db->query($sql);
+    }
+
+    function getHangoutURL($cliqueID){
+        $sql = "SELECT cliques.hangoutURL FROM cliques WHERE cliques.cliqueID = " . $cliqueID; 
+        $result = $this->db->query($sql);
+
+        $row = $result->row_array();
+        return $row['hangoutURL'];
     }
 
  

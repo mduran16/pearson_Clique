@@ -3,6 +3,7 @@ refreshQuestions();
 function respondToQuestion(questionID,userID,message){
 	$.ajax({
 		url: "http://clique.raspi.pw/cbe/index.php/question?answerQuestion=true&userID=" + userID + "&questionID=" + questionID + "&content=" + message,
+		cache: false,
 	})
 	$('#messageContainer').html('');
 	refreshQuestions();
@@ -30,6 +31,7 @@ function refreshQuestions(){
 	$.ajax({
   		url: "http://clique.raspi.pw/cbe/index.php/question?getQuestionThread=true&questionID=" + $("#content").attr("ref"),
   		type: "GET",
+  		cache: false,
 	}).success(function(response) {
 		var response = $.parseJSON(response);
 		//console.log(JSON.stringify(response))

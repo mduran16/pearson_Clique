@@ -266,7 +266,7 @@ input.search {
   /* overflow-y:scroll; */
   height:100%;
   margin: 0em;
-  /* padding-top: 5.8em; */
+  padding-top: 5.8em;
 }
 #sidebar-nav #dashboard-menu {
   list-style: none;

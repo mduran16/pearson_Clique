@@ -1,9 +1,52 @@
-    <div id="sidebar-nav" style="margin-top:48px;position:fixed;z-index:99999999">
-        <ul id="dashboard-menu">
-            <li>
-                <a href="javascript:;" onclick="changepage('home.html',0)">
-                    <span>Home</span>
-                </a>
-            </li>
-        </ul>
-    </div>
+
+    <ul id="dashboard-menu">
+        <li>
+            <a href="javascript:;" onclick="changepage('home.html',0)">
+            	<i class="icon-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-toggle" href="javascript:;">
+                <i class="icon-th-large"></i>
+                <span>Classes</span>
+                <i class="icon-chevron-down"></i>
+            </a>
+            <ul id="coursesMenu" class="submenu">
+            </ul>
+        </li>
+        <li>
+            <a class="dropdown-toggle" href="javascript:;">
+                <i class="icon-group"></i>
+                <span>Cliques</span>
+                <i class="icon-chevron-down"></i>
+            </a>
+            <ul id="cliquesMenu" class="submenu">
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;" onclick="changepage('about.html',0)">
+            	<i class="icon-book"></i>
+                <span>About</span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;" onclick="changepage('issues.html',0)">
+            	<i class="icon-exclamation-sign"></i>
+                <span>Notices</span>
+            </a>
+        </li>
+    </ul>
+
+    <script>
+	    $("#dashboard-menu .dropdown-toggle").click(function (e) {
+		    e.preventDefault();
+		    var $item = $(this).parent();
+		    $item.toggleClass("active");
+		    if ($item.hasClass("active")) {
+		      $item.find(".submenu").slideDown("fast");
+		    } else {
+		      $item.find(".submenu").slideUp("fast");
+		    }
+	 	 });
+	</script>

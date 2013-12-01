@@ -1,6 +1,7 @@
 $.ajax({
 	url: "http://clique.raspi.pw/cbe/index.php/chat?configureChat=true&id=" + $("#content").attr("ref"),
 	type: "GET",
+	cache: false,
 }).success(function(response) {
 	var response = $.parseJSON(response)
 	$("#content").attr("ref",response["room_id"])
@@ -42,6 +43,7 @@ function syncChat(latestID,chatID){
 	$.ajax({
 		url: "http://clique.raspi.pw/cbe/index.php/chat?getLatestMessages=true&latestID="+ latestID +"&chatID=" + chatID,
 		type: "GET",
+		cache: false,
 	}).success(function(response) {
 		var response = $.parseJSON(response)
 		if(response.length > 0){
@@ -74,5 +76,39 @@ function submitMessage(chatID,userID, message){
 	$.ajax({
 		url: "http://clique.raspi.pw/cbe/index.php/chat?addMessage=true&chatID=" + chatID + "&userID=" + userID + "&message=" + message,
 		type: "GET",
+		cache: false,
 	});
+}
+
+
+function schedulePrompt(){
+	if($('#schedulePrompt').length){
+		$('#schedulePrompt').remove();
+	}
+	var html = '<div class="" id="schedulePrompt">TEST</div>'
+	$("#content").before(html);
+}
+
+function insertEquation(){
+	if($('#schedulePrompt').length){
+		$('#schedulePrompt').remove();
+	}
+	var html = '<div class="" id="schedulePrompt">TEST</div>'
+	$("#content").before(html);
+}	
+
+function insertCode(){
+	if($('#schedulePrompt').length){
+		$('#schedulePrompt').remove();
+	}
+	var html = '<div class="" id="schedulePrompt">TEST</div>'
+	$("#content").before(html);
+}
+
+function insertDefinition(){
+	if($('#schedulePrompt').length){
+		$('#schedulePrompt').remove();
+	}
+	var html = '<div class="" id="schedulePrompt">TEST</div>'
+	$("#content").before(html);
 }
